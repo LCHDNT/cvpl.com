@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: navy-collab-todo
+    runtime: docker
+    autoDeploy: true
+    disk:
+      name: navy-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: SESSION_SECRET
+        generateValue: true
